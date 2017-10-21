@@ -1,0 +1,17 @@
+#! /usr/bin/env bash
+#
+# Update the `navigation:` menu in `_config.yml`
+#
+# Run this after adding a new page, removing a page, or moving a page from one
+# URL to another. Existing entries will not be reordered, but you may wish to
+# rearrange entries added by this command to reflect the desired navigation menu
+# structure.
+
+_update_nav() {
+  @go.log INFO 'Updating navigation menu in _config.yml'
+  @go.log_command bundle exec ruby -r 'bundler/setup' \
+    -r 'jekyll-theme-guides-mbland' \
+    -e "JekyllThemeGuidesMbland.update_navigation_configuration '$_GO_ROOTDIR'"
+}
+
+_update_nav "$@"

@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+#
+# Builds the site via `jekyll build`
+#
+# Accepts all the same arguments as `jekyll build`.
+
+_build() {
+  @go.log INFO "Building site"
+  @go.log_command bundle exec jekyll build "$@"
+}
+
+_build "$@"

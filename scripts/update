@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+#
+# Commands to update parts of the site only on demand
+
+. "$_GO_USE_MODULES" 'subcommands'
+
+@go.show_subcommands
