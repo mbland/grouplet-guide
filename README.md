@@ -1,11 +1,11 @@
-## Grouplet Playbook
+## Grouplet Guide
 
 "Grouplets" are self-organizing teams of volunteers that address concerns
 affecting a broad segment of the organization.
 
 This website is based upon the [Guides Template][]. After setting up your
 environment and cloning and serving the site locally, visit
-`http://localhost:4000/` to read the Grouplet Playbook in your browser.
+`http://localhost:4000/` to read the Grouplet Guide in your browser.
 
 [Guides Template]: https://github.com/mbland/guides-template
 

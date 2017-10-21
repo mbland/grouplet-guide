@@ -107,10 +107,10 @@ can grow along with the grouplet itself, and can provide the foundation for one
 or more of the grouplet's initial [Objectives and Key Results][]. Some examples:
 
 - **Testing Grouplet**: [The Automated Testing Playbook][atp]
-- **Intergrouplet**: [The Grouplet Playbook][gp]
+- **Intergrouplet**: [The Grouplet Guide][gp]
 
 [atp]: https://github.com/mbland/automated-testing-playbook/
-[gp]:  https://github.com/mbland/grouplet-playbook/
+[gp]:  https://github.com/mbland/grouplet-guide/
 
 ### Recruiting
 

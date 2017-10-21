@@ -1,4 +1,4 @@
-name: Grouplet Playbook
+name: Grouplet Guide
 exclude:
 - CONTRIBUTING.md
 - Gemfile
@@ -57,7 +57,7 @@ navigation:
   internal: true
 
 repos:
-- name: Grouplet Playbook
+- name: Grouplet Guide
   description: Main repository
   url: https://github.com/mbland/grouplet-playbook
 - name: Guides Template
