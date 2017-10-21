@@ -7,6 +7,20 @@ throughout a development culture.
 * Table of contents
 {: toc}
 
+### Sell, don't tell
+
+By selling people on the value of an idea—i.e. by soliciting their "buy-in"—you
+give them the opportunity to feel _ownership_ of it. In contrast, asserting
+_[authoritah][]_ makes people feel _owned_, like cattle, and fosters nothing but
+resentment, resistence, and ultimately rejection—even if the idea was likely a
+good one to begin with.
+
+[authoritah]: https://southpark.cc.com/clips/150368/you-will-respect-my-authoritah
+
+In other words, just as you would when selling a product or service, apply
+_customer-first thinking_ to those you hope to persuade to make a change. Only
+from this mindset does an optimal product or solution emerge.
+
 ### Abandon data and absolute reason
 
 Best practices are often more about _avoiding_ visible impact than _producing_
@@ -148,15 +162,10 @@ already “get it” but not necessarily to everyone.
 
 ### Play the long game
 
-Lasting change never comes quickly. **Sell, don't tell.** Eschew
-_[authoritah][]_; you know telling programmers “do as I say” is a recipe for
-disaster!
-
-[authoritah]: https://southpark.cc.com/clips/150368/you-will-respect-my-authoritah
-
-Understand that the problem isn’t purely technical, and it isn’t just about the
-value of a particular practice. It’s about the “chasm”. Hearts and minds must
-be persuaded (Early Majority), won (Late Majority), or conquered (laggards).
+Lasting change never comes quickly. Understand that the problem isn’t purely
+technical, and it isn’t just about the value of a particular practice. It’s
+about the “chasm”. Hearts and minds must be persuaded (Early Majority), won
+(Late Majority), or conquered (laggards).
 
 [DoICtC]: {{ site.baseurl }}{% link images/the-chasm.jpg %}
   "Diffusion of Innovations and the Chasm"
