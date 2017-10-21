@@ -37,7 +37,7 @@ Here’s how these commitment levels looked in reality for the Google Testing
 Grouplet:
 
 * **Core**: The core group consisted of the Testing Grouplet leads and active
-  core members; Fixit organizers and core team members recruited to fulfill
+  core members; [Fixit][] organizers and core team members recruited to fulfill
   specific roles; and the coordinators of the Testing on the Toilet and Test
   Certified programs.
 * **Partial**: The partially-committed volunteers consisted of regular Testing
@@ -63,40 +63,108 @@ team structure in order to orient members within the group and provide a channel
 for their creativity. However, rather than adopting a heavy-handed
 command-and-control style, have fun with the role names!
 
-As an example, here is a prospective list of roles:
+As an example, here is a prospective list of roles—and no, you may not need
+_all_ of them, at least not right away or all the time:
 
 **The Walrus (Organizer):** **Mike Bland**{: style="color: green;"}<br/>
 Assumes ownership of the overall effort. Responsible for: establishing
 direction and priorities, delegating tasks, removing obstacles, and getting
-his or her hands dirty when needed.
+their hands dirty when needed.
 
 **Prime Mover (Project Manager):** **Mike Bland**{: style="color: red;"}<br/>
-Ensures the meeting agenda is prepared and posted ahead of time, reserves the
-meeting room, manages remote coordination, ensures that the Historian’s
-minutes are posted in a timely manner.
+Ensures that tasks are assigned and executed, reserves the meeting room, manages
+remote coordination, ensures that the Historian’s minutes are posted in a timely
+manner.
 
-**Historian:** **Mike Bland**{: style="color: red;"}<br/>
+**Historian (Archivist):**
+**Mike Bland**{: style="color: red;"}<br/>
 Responsible for documenting, summarizing, and archiving notable issues or
-activities and their artifacts in a centrally-accessible repository. Meeting
-minutes fall under this rubric.
+activities and their artifacts in a centrally-accessible repository (such as the
+[home page][]). Meeting minutes fall under this rubric, as to retrospectives to
+ensure valuable lessons are recorded for the benefit of future generations.
 
-**Minister of Communication:** **Mike Bland**{: style="color: red;"}<br/>
-Ensures that the Slack channel and other communication media are accessible,
-useful, and broadly used by the group. May suggest alternate communication
-media or innovative uses of the media already in use. 
+**Minister of Information (Documentation Coordinator):**
+**Mike Bland**{: style="color: red;"}<br/>
+Solicits and helps cultivate documentation, technical and otherwise, in support
+of the grouplet's mission.
 
-**Minister of Information:** **Mike Bland**{: style="color: red;"}<br/>
-Solicits and helps cultivate content. In this context, ensures that all
-important information is integrated into or linked to by the Hub system, and
-that missing information is actively solicited.
+**Cat Herder (Tech Talk Coordinator):**
+**Mike Bland**{: style="color: red;"}<br/>
+Solicits volunteers to produce documentation and tech talks across all teams and
+offices.
 
-**Wordsmith:** **Mike Bland**{: style="color: red;"}<br/>
+**Minister of Propaganda (Publicist):**
+**Mike Bland**{: style="color: red;"}<br/>
+Raises awareness of and excitement around the grouplet and its initiatives and
+events. Responsible for the design and distribution of promotional material.
+
+**Minister of Communication (Communication Coordinator):**
+**Mike Bland**{: style="color: red;"}<br/>
+Ensures that [Slack][] channels and other communication media are accessible,
+useful, and broadly used by the group. May suggest alternate communication media
+or innovative uses of the media already in use.
+
+[Slack]: https://slack.com/
+
+**Scheduler (Scheduler)**
+**Mike Bland**{: style="color: red;"}<br/>
+Schedules meetings and events, takes care of reservations and logistics, and
+maintains a published calendar.
+
+**Contact Czar/Czarina (Contact/Volunteer Coordinator):**
+**Mike Bland**{: style="color: red;"}<br/>
+Recruits Local Instigators (Office Contacts) across various offices and keeps
+them engaged, making sure they’re equipped with flyers and other propaganda, and
+responding to their requests and concerns.
+
+**Local Instigators (Office Contacts):**<br/>
+Representatives of the grouplet and its events and initiatives across offices
+who ensure the sense of engagement with the main grouplet.
+
+**Mayor of Jonestown (Occasional Volunteer Coordinator):**
+**Mike Bland**{: style="color: red;"}<br/>
+Focuses on recruiting new hires and other occasional volunteers to aid with
+publicity and schwag delivery. Ensures their tasks are well-defined and
+well-communicated.
+
+**Heart and Soul (Recoginition Coordinator):**
+**Mike Bland**{: style="color: red;"}<br/>
+Ensures volunteers and event participants are recognized and rewarded for their
+contributions, in ways large and small.
+
+**Schwagmeister (Prize Coordinator):**
+**Mike Bland**{: style="color: red;"}<br/>
+Designs, procures, and distributes prizes, awards, and other schwag.
+
+**Wordsmith (Content Designer):**
+**Mike Bland**{: style="color: red;"}<br/>
 Explores and promotes standardized means of organizing artifacts and their
 content, for example the use of tags, application of CSS styles, traditional SEO
 techniques for organizing content and making it more easily discoverable.
 
-**Hacker:** **Mike Bland**{: style="color: red;"}<br/>
-Responsible for the active development of any associated programs or systems.
+**Festmeister (Event Planner/Manager):**
+**Mike Bland**{: style="color: red;"}<br/>
+Plans events and ensures food, drinks, and other items are procured and
+delivered.
+
+**Hacker (Tech Lead/Tools Developer):**
+**Mike Bland**{: style="color: red;"}<br/>
+Responsible for the development of any associated programs or systems.
+
+**Field Commander (War Room Coordinator):**
+**Mike Bland**{: style="color: red;"}<br/>
+Recruits volunteers for and manages a local war room during [Fixits][] and
+similar events, where volunteers within an office congregate to collaborate on
+technical issues, and where participants can walk in to seek assistance.
+
+**Damned Liar (Statistician):**
+**Mike Bland**{: style="color: red;"}<br/>
+Collects metrics on the grouplet's impact, and that of its events and specific
+initiatives, and makes it sound like the numbers actually mean something.
+
+**Minister of Phynance (Accountant):**
+**Mike Bland**{: style="color: red;"}<br/>
+Secures funding and manages the budget for schwag and prizes.
 
 ### Probability of success
 
@@ -157,6 +225,8 @@ of forward momentum given fluctuating degrees of volunteer availability—and it
 the goal of this guide to give grouplet leads the tools they need to achieve
 that.
 
+[fixits]:    {{site.baseurl}}{% link _pages/processes-and-artifacts.md %}#fixits
 [two-pager]: {{site.baseurl}}{% link _pages/processes-and-artifacts.md %}#the-two-pager
 [recruits]:  {{site.baseurl}}{% link _pages/processes-and-artifacts.md %}#recruiting
+[home page]: {{site.baseurl}}{% link _pages/processes-and-artifacts.md %}#home-page
 [kick-off meeting]: {{site.baseurl}}{% link _pages/processes-and-artifacts.md %}#kick-off-meeting
