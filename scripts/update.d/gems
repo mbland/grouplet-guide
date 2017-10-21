@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+#
+# Update any or all gems via `bundle update`
+#
+# Accepts the same arguments as `bundle update`.
+
+_update_gems() {
+  @go.log INFO 'Updating Ruby gems'
+  @go.log_command bundle update "$@"
+}
+
+_update_gems "$@"

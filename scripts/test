@@ -1,0 +1,25 @@
+#! /usr/bin/env bash
+#
+# Tests `./go` scripts
+
+# Passes all arguments through to `@go.bats_main` from `lib/bats-main`.
+_test_main() {
+  local _GO_BATS_COVERAGE_INCLUDE
+  _GO_BATS_COVERAGE_INCLUDE=('scripts/')
+  local _GO_COVERALLS_URL='https://coveralls.io/github/mbland/guides-template'
+
+  if [[ ! -d "$_GO_TEST_DIR" ]]; then
+    @go.log INFO "\$_GO_TEST_DIR \"${_GO_TEST_DIR#$_GO_ROOTDIR}\"" \
+      "doesn't exist; skipping..."
+    return
+  fi
+
+  . "$_GO_USE_MODULES" 'bats-main'
+  # Tab completions
+
+  @go.log INFO "Running tests"
+  # Coverage is temporarily disabled.
+  _GO_COLLECT_BATS_COVERAGE= @go.bats_main "$@"
+}
+
+_test_main "$@"

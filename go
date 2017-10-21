@@ -1,54 +1,100 @@
-#! /usr/bin/env ruby
+#! /usr/bin/env bash
+#
+# Command line interface to the Grouplet Playbook project
+#
+# Run `./go help` for information.
+#
+# To set up shell completion in Bash, where `gt` may be replaced by any name you
+# choose:
+#
+# $ eval "$(./go env gt)"
 
-require 'English'
+declare GO_SCRIPTS_DIR="${GO_SCRIPTS_DIR:-scripts}"
+declare GO_SCRIPT_BASH_VERSION="${GO_SCRIPT_BASH_VERSION:-v1.7.0}"
+declare GO_SCRIPT_BASH_CORE_DIR="${GO_SCRIPT_BASH_CORE_DIR:-${0%/*}/$GO_SCRIPTS_DIR/go-script-bash}"
+declare GO_SCRIPT_BASH_REPO_URL="${GO_SCRIPT_BASH_REPO_URL:-https://github.com/mbland/go-script-bash.git}"
+declare GO_SCRIPT_BASH_DOWNLOAD_URL="${GO_SCRIPT_BASH_DOWNLOAD_URL:-${GO_SCRIPT_BASH_REPO_URL%.git}/archive}/$GO_SCRIPT_BASH_VERSION.tar.gz"
 
-Dir.chdir File.dirname(__FILE__)
+# Downloads `GO_SCRIPT_BASH_VERSION` as a tar.gz file and unpacks it.
+download_go_script_bash_tarball() {
+  # GitHub removes the leading 'v' from the archive's output directory.
+  local unpacked_dir="go-script-bash-${GO_SCRIPT_BASH_VERSION#v}"
+  local core_dir_parent="${GO_SCRIPT_BASH_CORE_DIR%/*}"
+  local url="$GO_SCRIPT_BASH_DOWNLOAD_URL"
+  local protocol="${url%%://*}"
+  local download_cmd=()
 
-def try_command_and_restart(command)
-  exit $CHILD_STATUS.exitstatus unless system command
-  exec RbConfig.ruby, *[$PROGRAM_NAME].concat(ARGV)
-end
+  if [[ "$protocol" == "$url" ]]; then
+    printf 'GO_SCRIPT_BASH_DOWNLOAD_URL has no protocol: %s\n' "$url" >&2
+    return 1
+  elif [[ "$(git --version)" =~ windows && "$protocol" == 'file' ]]; then
+    url="file://$(cygpath -m "${url#file://}")"
+  fi
 
-begin
-  require 'bundler/setup' if File.exist? 'Gemfile'
-rescue LoadError
-  try_command_and_restart 'gem install bundler'
-rescue SystemExit
-  try_command_and_restart 'bundle install'
-end
+  if command -v curl >/dev/null; then
+    download_cmd=(curl -LfsS "$url")
+  elif command -v fetch >/dev/null; then
+    download_cmd=(fetch -o - "$url")
+  elif [[ "$protocol" == 'file' ]] && command -v cat; then
+    # `wget` can't handle 'file://' urls. Though input redirection would work
+    # below, this method is consistent with the process substitution logic.
+    download_cmd=(cat "${url#file://}")
+  elif command -v wget >/dev/null; then
+    download_cmd=(wget -O - "$url")
+  else
+    printf "Failed to find cURL, wget, or fetch\n" >&2
+    return 1
+  fi
 
-begin
-  require 'go_script'
-rescue LoadError
-  try_command_and_restart 'gem install go_script' unless File.exist? 'Gemfile'
-  abort "Please add \"gem 'go_script'\" to your Gemfile"
-end
+  if ! command -v tar >/dev/null; then
+    printf "Failed to find tar\n" >&2
+    return 1
+  fi
+  printf "Downloading framework from '%s'...\n" "$url"
 
-require 'guides_style_18f'
+  if ! "${download_cmd[@]}" | tar -xzf - ||
+    [[ "${PIPESTATUS[0]}" -ne '0' ]]; then
+    printf "Failed to download from '%s'.\n" "$url" >&2
+    return 1
+  elif [[ ! -d "$core_dir_parent" ]] && ! mkdir -p "$core_dir_parent" ; then
+    printf "Failed to create scripts dir '%s'\n" "$core_dir_parent" >&2
+    rm -rf "$unpacked_dir"
+    return 1
+  elif ! mv "$unpacked_dir" "$GO_SCRIPT_BASH_CORE_DIR"; then
+    printf "Failed to install downloaded directory in '%s'\n" \
+      "$GO_SCRIPT_BASH_CORE_DIR" >&2
+    rm -rf "$unpacked_dir"
+    return 1
+  fi
+  printf "Download of '%s' successful.\n\n" "$url"
+}
 
-extend GoScript
-check_ruby_version '2.1.5'
+git_clone_go_script_bash() {
+  printf "Cloning framework from '%s'...\n" "$GO_SCRIPT_BASH_REPO_URL"
+  if ! git clone --depth 1 -c advice.detachedHead=false \
+      -b "$GO_SCRIPT_BASH_VERSION" "$GO_SCRIPT_BASH_REPO_URL" \
+      "$GO_SCRIPT_BASH_CORE_DIR"; then
+    printf "Failed to clone '%s'; aborting.\n" "$GO_SCRIPT_BASH_REPO_URL" >&2
+    return 1
+  fi
+  printf "Clone of '%s' successful.\n\n" "$GO_SCRIPT_BASH_REPO_URL"
+}
 
-command_group :dev, 'Development commands'
+if [[ ! -e "$GO_SCRIPT_BASH_CORE_DIR/go-core.bash" ]]; then
+  if ! download_go_script_bash_tarball; then
+    printf "Using git clone as fallback\n"
+    if ! git_clone_go_script_bash; then
+      exit 1
+    fi
+  fi
+fi
 
-def_command :update_nav, 'Update the \'navigation:\' data in _config.yml' do
-  GuidesStyle18F.update_navigation_configuration Dir.pwd
-end
+. "$GO_SCRIPT_BASH_CORE_DIR/go-core.bash" "$GO_SCRIPTS_DIR"
+. "$_GO_USE_MODULES" 'log'
 
-def_command :update_theme, 'Update the guides_style_18f gem' do
-  exec({ 'RUBYOPT' => nil }, 'bundle', *%w(update --source guides_style_18f))
-end
-
-def_command :update_gems, 'Update Ruby gems' do |gems|
-  update_gems gems
-end
-
-def_command :serve, 'Serve the site at localhost:4000' do
-  serve_jekyll
-end
-
-def_command :build, 'Build the site' do
-  build_jekyll
-end
-
-execute_command ARGV
+if [[ ! -d "$_GO_ROOTDIR/_site" ]]; then
+  if ! @go.setup_project 'setup' || [[ -z "$*" ]]; then
+    exit
+  fi
+fi
+@go "$@"

@@ -1,0 +1,77 @@
+#! /usr/bin/env bash
+#
+# Runs first-time setup commands for a freshly-cloned repository
+#
+# It first checks that Ruby, Node.js, and Rubygems are installed, then installs
+# the necessary gems, builds the site, and runs the tests.
+
+export RUBY_VERSION_PATTERN='^ruby ([0-9]+)\.([0-9]+)\.([0-9]+)'
+export MIN_RUBY_VERSION
+MIN_RUBY_VERSION=(2 3 3)
+
+export NODE_VERSION_PATTERN='^v([0-9]+)\.([0-9]+)\.([0-9]+)$'
+export MIN_NODE_VERSION
+MIN_NODE_VERSION=(4 0 0)
+
+_setup_check_min_version() {
+  local program_name="$1"
+  local version_string="$2"
+  local version_pattern="$3"
+  local major="$4"
+  local minor="$5"
+  local patch="$6"
+  local err_msg="$program_name v$major.$minor.$patch required, "
+  err_msg+="$version_string installed"
+
+  if [[ ! "$version_string" =~ $version_pattern ]]; then
+    @go.log FATAL "Version string '$version_string' doesn't match '$pattern'"
+  elif [[ "${BASH_REMATCH[1]}" -lt "$major" ]]; then
+    @go.log ERROR "$err_msg"
+  elif [[ "${BASH_REMATCH[1]}" -gt "$major" ]]; then
+    return
+  elif [[ "${BASH_REMATCH[2]}" -lt "$minor" ]]; then
+    @go.log ERROR "$err_msg"
+  elif [[ "${BASH_REMATCH[2]}" -gt "$minor" ]]; then
+    return
+  elif [[ "${BASH_REMATCH[3]}" -lt "$patch" ]]; then
+    @go.log ERROR "$err_msg"
+  fi
+}
+
+_setup_check_required_programs_installed() {
+  @go.log INFO "Checking for required system programs"
+
+  if ! command -v ruby >/dev/null; then
+    @go.log ERROR 'Please install Ruby before continuing.'
+  elif ! _setup_check_min_version 'ruby' "$(ruby -v)" "$RUBY_VERSION_PATTERN" \
+    "${MIN_RUBY_VERSION[@]}"; then
+    @go.log ERROR 'Please install an updated version of Ruby before continuing.'
+  elif ! command -v node >/dev/null; then
+    @go.log ERROR 'Please install Node.js before continuing.'
+  elif ! _setup_check_min_version 'node' "$(node -v)" "$NODE_VERSION_PATTERN" \
+    "${MIN_NODE_VERSION[@]}"; then
+    @go.log ERROR 'Please install an updated version of Node.js' \
+      'before continuing.'
+  elif ! command -v gem >/dev/null; then
+    @go.log ERROR 'Please install Rubygems before continuing.'
+  fi
+}
+
+_setup_install_gems() {
+  @go.log INFO "Installing Ruby gems"
+
+  if ! command -v bundle >/dev/null && ! gem install bundler; then
+    @go.log ERROR 'Failed to install Bundler.'
+  elif ! bundle install; then
+    @go.log ERROR 'Failed to install gems in Gemfile via Bundler.'
+  fi
+}
+
+_setup() {
+  _setup_check_required_programs_installed &&
+    _setup_install_gems &&
+    @go build &&
+    @go test
+}
+
+_setup "$@"

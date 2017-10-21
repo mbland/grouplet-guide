@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+#
+# Update to the latest version of the Jekyll theme
+
+_update_theme() {
+  @go.log INFO 'Updating Jekyll theme'
+  @go.log_command @go update gems jekyll-theme-guides-mbland
+}
+
+_update_theme "$@"

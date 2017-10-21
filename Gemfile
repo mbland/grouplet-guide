@@ -1,10 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
-gem 'redcarpet'
-gem 'rouge'
-gem 'go_script'
+gem 'jekyll', '>=3.2.0'
 
 group :jekyll_plugins do
-  gem 'guides_style_18f'
+  gem 'jekyll-theme-guides-mbland'
 end
