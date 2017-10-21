@@ -50,10 +50,13 @@ formation of grouplets and to facilitate their discovery. For example:
 
 Once the grouplet has established its presence via adhering to the appropriate
 formation [conventions][], it can begin to execute on its mission. The
-[Processes and artifacts][] and [Education and advocacy][] chapters provide some
-high-level guidelines to shape the grouplet's vision and activities. These
-chapters should be considered starting points for further exploration, not all
-encompassing, iron clad rules.
+[Structure][] chapter suggests a method of lightweight organization that can
+help orient volunteers and scale the effort very quickly. The [Processes and
+artifacts][] and [Education and advocacy][] chapters suggest some high-level
+tools and guidelines to shape the grouplet's vision and activities.
+
+These chapters should be considered starting points for further exploration, not
+all encompassing, iron clad rules.
 
 ### Pausing and dissolving
 
@@ -79,5 +82,6 @@ than starting from scratch and risk repeating mistakes.
 [home page]: {{site.baseurl}}{% link _pages/processes-and-artifacts.md %}#home-page
 [OKRs]:      {{site.baseurl}}{% link _pages/processes-and-artifacts.md %}#objectives-and-key-results
 [Intergrouplet]: {{site.baseurl}}{% link _pages/intergrouplets.md %}
+[Structure]:     {{site.baseurl}}{% link _pages/structure.md %}
 [Processes and artifacts]: {{site.baseurl}}{% link _pages/processes-and-artifacts.md %}
 [Education and advocacy]:  {{site.baseurl}}{% link _pages/education-and-advocacy.md %}

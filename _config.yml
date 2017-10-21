@@ -40,6 +40,9 @@ navigation:
 - text: Life cycle
   url: life-cycle/
   internal: true
+- text: Structure
+  url: structure/
+  internal: true
 - text: Processes and artifacts
   url: processes-and-artifacts/
   internal: true

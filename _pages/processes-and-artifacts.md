@@ -57,7 +57,7 @@ At the end of the quarter, the team will review and self-grade each OKR, as well
 as the OKRs overall, on a scale from 0.0 to 1.0. The "ideal" score is **0.7**,
 which is indicative of a "stretch goal": a goal that was beyond the team's
 reach, but pushed the team to accomplish more than they would have given a more
-conservative goal. 
+conservative goal.
 
 OKRs are designed to produce focus and enable calibration of expectations.
 Self-grading is a feedback process; a low grade doesn't necessarily denote
@@ -89,75 +89,6 @@ As an example, here are propspective OKRs for the Testing Grouplet:
 
 _(Note: At Google, every individual, team, and department maintains a set of
 quarterly OKRs, as does the entire company.)_
-
-### Roles
-
-[roles]: #roles
-
-Though a grouplet leader (usually) isn't in a formal supervisory role over other
-grouplet members, there's still a strong need to establish a basic, functional
-team structure. However, rather than adopting a heavy-handed command-and-control
-style, have fun with the role names! The prospective separation of
-responsibilities as defined in the [two-pager][] give prospective
-[recruits][] a sense that the team is (or will become) well-organized and
-efficient, while keeping the actual titles fun sends a message that the group is
-not about piling additional work onto people for the sake of the organizer's
-personal ambition.
-
-Good roles serve two critical functions: delegation and escalation. The
-Organizers _should not_ be the only ones responsible for every detail of the
-overall effort. Also, when responsibilities are clear, grouplet members may be
-able to manage tasks by going directly to the appropriate role-holder, rather
-than the organizers having to remain in the critical path of every decision. In
-other words, "creativity is pushed towards the edge of the organization". (Need
-"Technical Impact" citation.)
-
-As an example, here is a prospective list of roles:
-
-**The Walrus (Organizer):** **Mike Bland**{: style="color: green;"}<br/>
-Assumes ownership of the overall effort. Responsible for: establishing
-direction and priorities, delegating tasks, removing obstacles, and getting
-his or her hands dirty when needed.
-
-**Prime Mover (Project Manager):** **Mike Bland**{: style="color: red;"}<br/>
-Ensures the meeting agenda is prepared and posted ahead of time, reserves the
-meeting room, manages remote coordination, ensures that the Historian’s
-minutes are posted in a timely manner.
-
-**Historian:** **Mike Bland**{: style="color: red;"}<br/>
-Responsible for documenting, summarizing, and archiving notable issues or
-activities and their artifacts in a centrally-accessible repository. Meeting
-minutes fall under this rubric.
-
-**Minister of Communication:** **Mike Bland**{: style="color: red;"}<br/>
-Ensures that the Slack channel and other communication media are accessible,
-useful, and broadly used by the group. May suggest alternate communication
-media or innovative uses of the media already in use. 
-
-**Minister of Information:** **Mike Bland**{: style="color: red;"}<br/>
-Solicits and helps cultivate content. In this context, ensures that all
-important information is integrated into or linked to by the Hub system, and
-that missing information is actively solicited.
-
-**Wordsmith:** **Mike Bland**{: style="color: red;"}<br/>
-Explores and promotes standardized means of organizing artifacts and their
-content, for example the use of tags, application of CSS styles, traditional SEO
-techniques for organizing content and making it more easily discoverable.
-
-**Hacker:** **Mike Bland**{: style="color: red;"}<br/>
-Responsible for the active development of any associated programs or systems.
-
-Notice the number of roles with the organizers' names next to them in red. You
-can point [recruits][] at this list when pitching them, or during the [kick-off
-meeting][], and explain this: _**The grouplet's long-term chances of success are
-inversely proportional to the number of Roles that have the organizers' names
-next to them in red!**_ People can quickly see where help is most needed and
-jump in accordingly.
-
-Also, there need not be a one-to-one correspondence between roles and
-individuals. One person can serve more than one role, and one role can be filled
-by more than one person. The important part is that the functions and those
-responsible for them are made clear.
 
 ### MacGuffin
 
@@ -357,9 +288,11 @@ project management tool, or some combination of these tools and others.
 
 ### Fixits
 
-Fixits are traditionally one-day sprints where people are asked to put aside
+[Fixits][] are traditionally one-day sprints where people are asked to put aside
 normal project work and focus on "important but not urgent" tasks. They are
 also fantastic for rolling out new tools across an organization.
+
+[Fixits]: https://mike-bland.com/2011/10/04/fixits.html
 
 In practice, fixits can be of any length and size. Organizing or participating
 in a fixit has many important side-benefits in addition to the stated goals of
@@ -377,6 +310,12 @@ the fixit itself:
   push beyond a tipping point, ratcheting the overall culture-change effort up
   to a new plateau.
 
+[Roles][] are especially powerful for organizing and generating momentum for a
+fixit. It was [Mike Bland's experience organizing his second Testing Fixit at
+Google][fixit-2007] that inspired the "Roles" concept.
+
+[fixit-2007]: https://mike-bland.com/2012/10/23/testing-fixit-2007.html
+
 ### Exit strategy
 
 A healthy grouplet doesn't depend on the vision and effort of one or two
@@ -385,3 +324,5 @@ Cultivating members to rise up through the ranks helps the grouplet remain
 vibrant and active, and will one day free you to move on to new challenges
 with the comfort of knowing that the team you helped to build continues to
 thrive.
+
+[roles]: {{site.baseurl}}{% link _pages/structure.md %}#roles
