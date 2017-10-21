@@ -20,8 +20,8 @@ Ruby** and **Installing Node.js** sections below before proceeeding.
 To clone the repo and serve the site locally:
 
 ```shell
-$ git clone https://github.com/mbland/grouplet-playbook.git
-$ cd MY-NEW-GUIDE
+$ git clone https://github.com/mbland/grouplet-guide.git
+$ cd grouplet-guide
 $ ./go serve
 ```
 
@@ -100,7 +100,7 @@ Feel free to [comment on or file a new GitHub issue][issues] or otherwise ping
 [@mbland](https://github.com/mbland) with any questions or comments you may
 have, especially if the current documentation hasn't addressed your needs.
 
-[issues]: https://github.com/mbland/grouplet-playbook/issues
+[issues]: https://github.com/mbland/grouplet-guide/issues
 
 If you'd care to contribute to this project, be it code fixes, documentation
 updates, or new features, please read the [CONTRIBUTING](CONTRIBUTING.md) file.
