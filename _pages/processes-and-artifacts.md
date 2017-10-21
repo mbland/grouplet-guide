@@ -1,5 +1,4 @@
 ---
-permalink: /processes-and-artifacts/
 title: Processes and artifacts
 ---
 Processes and artifacts can help rapidly organize a grouplet, as well as

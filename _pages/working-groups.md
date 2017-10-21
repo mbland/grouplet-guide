@@ -1,5 +1,4 @@
 ---
-permalink: /working-groups/
 title: Working groups
 ---
 A **working group** is an ad hoc group that spins up or down depending on

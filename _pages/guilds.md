@@ -1,5 +1,4 @@
 ---
-permalink: /guilds/
 title: Guilds
 ---
 

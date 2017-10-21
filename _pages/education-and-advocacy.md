@@ -1,5 +1,4 @@
 ---
-permalink: /education-and-advocacy/
 title: Education and advocacy
 ---
 This page contains models and strategies for driving adoption of best practices throughout a
